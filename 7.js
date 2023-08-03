@@ -23,7 +23,7 @@ class EmployeeGroup {
 // Клас EmployeeIterator відповідає за ітерацію по групі працівників.
 class EmployeeIterator {
   // Робимо властивість #employees - це масив працівників, по якому ми будемо ітерувати. Він ініціалізується у конструкторі.
-  #employees = null;
+  #employees = [];
   // Робимо властивість #currentIndex, яка вказує на поточну позицію в масиві працівників. Він ініціалізується зі значенням 0.
   #currentIndex = 0;
   // Конструктор приймає один параметр employeeGroup - об'єкт типу EmployeeGroup. Він ініціалізує властивість #employees this.#employees = employeeGroup.employees.

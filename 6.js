@@ -17,12 +17,10 @@ class Basket {
   // Робимо метод calculateTotalPrice, що розраховує загальну вартість товарів в кошику з урахуванням знижки
   calculateTotalPrice() {
     // За допомогою метода reduce ми сумуємо вартість всіх товарів в масиві
-    const price = this.goods.reduce((acc, good) => (acc = good.price), 0);
+    const price = this.goods.reduce((acc, good) => acc + good.price, 0);
   }
   // Застосовуємо знижку до загальної вартості за допомогою метода applyDiscount нашого об'єкта discountPlan
-  applyDiscount(good) {
-    return price > 100 ? price * 0.9 : price;
-  }
+  return this.discountPlan.applyDiscount(price);
 }
 // Клас RegularDiscountPlan: стратегія знижки для постійних клієнтів
 class RegularDiscountPlan extends Basket {
