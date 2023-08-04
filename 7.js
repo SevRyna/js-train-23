@@ -28,7 +28,7 @@ class EmployeeIterator {
   #currentIndex = 0;
   // Конструктор приймає один параметр employeeGroup - об'єкт типу EmployeeGroup. Він ініціалізує властивість #employees this.#employees = employeeGroup.employees.
   constructor(employeeGroup) {
-    this.#employees = employeeGroup.employee;
+    this.#employees = employeeGroup.employees;
   }
   // Створимо метод #hasNext, який перевіряє, чи є в масиві працівників наступний елемент для ітерації.
   #hasNext() {
@@ -36,17 +36,20 @@ class EmployeeIterator {
     return this.#currentIndex < this.#employees.length;
   }
   // Робимо метод next, який повертає наступного працівника в масиві та збільшує #currentIndex на 1 якщо є наступний елемент, інакше повертає null.
-  // Робимо метод list, який використовується для виведення імен всіх працівників в групі.
+
   next() {
     if (this.#hasNext()) {
-      const list = this.#employees[this.#currentIndex].list;
+      const employee = this.#employees[this.#currentIndex];
       this.#currentIndex++;
-      return list;
+      return employee;
     }
     return null;
   }
+  // Робимо метод list, який використовується для виведення імен всіх працівників в групі.
+  list() {
+    return this.#employees.map((employee) => employee.name);
+  }
 }
-
 console.log("Завдання 7 ====================================");
 // Після виконання розкоментуйте код нижче
 

@@ -12,7 +12,7 @@ class Basket {
   // Робимо метод addGood, що приймає один параметр - good, який потрібно додати до масиву
   addGood(good) {
     // Додаємо новий товар в масив товарів
-    this.good.push(good);
+    this.goods.push(good);
   }
   // Робимо метод calculateTotalPrice, що розраховує загальну вартість товарів в кошику з урахуванням знижки
   calculateTotalPrice() {
@@ -27,7 +27,7 @@ class RegularDiscountPlan extends Basket {
   // Робимо метод applyDiscount, що приймає ціну price як параметр
   applyDiscount(price) {
     // Повертає ціну з урахуванням знижки в 10% price * 0.9
-    return price * 0.1;
+    return price * 0.9;
   }
 }
 //Клас VIPDiscountPlan: стратегія знижки для VIP клієнтів
@@ -35,7 +35,7 @@ class VIPDiscountPlan extends Basket {
   // Робимо метод applyDiscount, що приймає ціну price як параметр
   applyDiscount(price) {
     // Повертає ціну з урахуванням знижки в 20% price * 0.8
-    return price * 0.2;
+    return price * 0.8;
   }
 }
 // Клас NewClientDiscountPlan: стратегія знижки для нових клієнтів
@@ -43,7 +43,7 @@ class NewClientDiscountPlan extends Basket {
   // Робимо метод applyDiscount, що приймає ціну price як параметр
   applyDiscount(price) {
     //{ Повертає ціну з урахуванням знижки в 5% price * 0.95
-    return price * 0.05;
+    return price * 0.95;
   }
 }
 console.log("Завдання 6 ====================================");
