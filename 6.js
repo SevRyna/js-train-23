@@ -18,9 +18,9 @@ class Basket {
   calculateTotalPrice() {
     // За допомогою метода reduce ми сумуємо вартість всіх товарів в масиві
     const price = this.goods.reduce((acc, good) => acc + good.price, 0);
+    // Застосовуємо знижку до загальної вартості за допомогою метода applyDiscount нашого об'єкта discountPlan
+    return this.discountPlan.applyDiscount(price);
   }
-  // Застосовуємо знижку до загальної вартості за допомогою метода applyDiscount нашого об'єкта discountPlan
-  return this.discountPlan.applyDiscount(price);
 }
 // Клас RegularDiscountPlan: стратегія знижки для постійних клієнтів
 class RegularDiscountPlan extends Basket {
